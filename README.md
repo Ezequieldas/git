@@ -18,7 +18,7 @@ Cambia el estado del archivo al "stage"
 
 `git add .`
 
-Cambia el estado del todos los rchivos del repositorio al "stage"
+Cambia el estado del todos los archivos del repositorio al "staging area" de la memoria RAM
 
 `git commit -m "mensaje de la modificación"`
 
