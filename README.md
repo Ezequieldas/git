@@ -93,9 +93,9 @@ Este es el comando para sacar archivos del área de staging. No para borrarlos, 
 
 Traer un repositorio de github a nuestro repositorio local y a nuestro directorio de trabajo
 
-`git push`
+`git push origin (rama)`
 
-Enviar todos los cambios al repositorio remoto
+Enviar todos los cambios al repositorio remoto (origin es un nombre opcional pero se usa por convención)
 
 `git fetch`
 
@@ -117,9 +117,17 @@ Touch crea un nuevo archivo en la carpeta en la que estamos ubicados
 
 Realiza la tarea de `git add .` y `git commit -m` al mismo tiempo (solo si el archivo ya tuvo al menos un `git add .`)
 
-`git branch`
+`git branch nueva_rama`
 
-Abre una nueva rama del commit
+Abre una nueva rama en el proyecto
+
+`git show-branch`
+
+Nos muestra el hisotiral de ramas del proyecto
+
+`git show-branch --all`
+
+Nos muestra el hisotiral de ramas del proyecto con información más detallada
 
 `git checkout archivo.txt`
 
