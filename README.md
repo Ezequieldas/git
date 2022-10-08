@@ -29,6 +29,10 @@ Envía cambios al repostiorio con un mensaje indicativo sobre los cambios realiz
 Como no le enviamos un mensaje, abre el editor de código basado en la linea de comandos(vim), solicitando el mensaje referente a los cambios. Luego envía los cambios al repositorio. (El control de versiones no permite cambios vacíos)
 (para salir shift-z-z)
 
+`git commit --amend`
+
+Es un remiendo al último commit realizado, es decir, se integra al mismo (también permite editar la leyenda de ese último commit)
+
 `git rm`
 
 Este comando nos ayuda a eliminar archivos de Git sin eliminar su historial del sistema de versiones. Esto quiere decir que si necesitamos recuperar el archivo solo debemos “viajar en el tiempo” y recuperar el último commit antes de borrar el archivo en cuestión
@@ -193,3 +197,107 @@ Empuja los tags al repositorio de Github
 
 Borrar el tag en Github
 
+`git rebase main`
+
+Unifica dos ramas. Hacerlo desde la rama donde se va a unificar.
+
+`gitk`
+
+Nos muestra la historia de nuestro repositorio desde una interfaz nueva
+
+`git stash`
+
+Para guardar cambios temporales
+
+`git stash pop`
+
+Confirmar los cambios guardados
+
+`git stash branch (rama)`
+
+Crea la rama y guarda los cambios de stash en la misma
+
+`git stash drop`
+
+Borra el stash
+
+`git stash list`
+
+Para visualizar lo guardado en `git stash`
+
+`git clean --dry-run`
+
+Alista los archivos que no son parte de laa estructura del código, o que están repetidos para borrarlos (primero pide confirmación)
+
+`git clean -f`
+
+Ejecuta git clean y los borra (importante: no borra carpetas ni archivos .gitignore)
+
+`git cherry-pick (version del commit)`
+
+Traer un commit en específico de otra rama para incluirlo en la rama master (no es una buena práctica)
+
+`git reflog`
+
+Nos permite visualizar todo los cambios, incluso los movimientos de eliminación de archivos. Desde allí podemos encontrar la última versión a la que queremos regresar
+
+`git reset `
+
+`git reset (version)`
+
+Es la forma "soft" de resetear. Recupera la versión, manteniendo el staging actual
+
+`git reset --HARD (version)`
+
+Resetea todo el repositorio a la versión solicitada. Importante: borra toda la historia posterior a esa versión (salvo para reflog)
+
+`git grep (palabra a buscar)`
+
+Podemos ver cuantas veces se utilizó esa palabra en el repositorio
+
+`git grep -n (palabra a buscar)`
+
+Podemos ver cuantas veces se utilizó esa palabra en el repositorio, y además, en qué linea del código
+
+`git grep -c (palabra a buscar)`
+
+Podemos ver en cifras cuántas veces se utiliza esa palabra en el repositorio, al detalle en cada archivo
+
+`git log (palabra a buscar)`
+
+La misma aplicación que `git grep` pero para los commits
+
+`git shortlog`
+
+Permite ver cada cambio realizado por cada colaborador del equipo
+
+`git shortlog -sn`
+
+Muestra las personas que han hecho los commits
+
+`git shortlog -sn --all`
+
+Muestra cuantos commit han hecho cada miembros del equipo hasta los que han sido eliminado
+
+`git shortlog -sn --all --no-merge`
+
+Muestra cuantos commit han hecho cada miembros quitando los eliminados sin los merges
+
+`git blame (archivo)`
+
+Muestra quien hizo cada cosa linea por linea
+
+`git (comando) --help`
+
+Muestra como funciona el comando.
+
+`git blame (archivo) -Llinea_inicial linea_final`
+
+Muestra quien hizo cada cosa linea por linea indicándole desde que linea ver ejemplo -L35,50
+
+`git branch -r`
+Se muestran todas las ramas remotas
+
+`git branch -a`
+
+Se muestran todas las ramas tanto locales como remotas. Puedes ver cuales existen y a cuales falta hacerles push
